@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2020 at 04:17 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Generation Time: Jul 05, 2022 at 10:27 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -52,9 +51,16 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `categoryName` varchar(255) NOT NULL,
   `categoryDescription` longtext NOT NULL,
-  `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creationDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `updationDate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `categoryName`, `categoryDescription`, `creationDate`, `updationDate`) VALUES
+(1, 'ok', '', '2022-05-25 16:04:22', '');
 
 -- --------------------------------------------------------
 
@@ -67,8 +73,15 @@ CREATE TABLE `complaintremark` (
   `complaintNumber` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `remark` mediumtext NOT NULL,
-  `remarkDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `remarkDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `complaintremark`
+--
+
+INSERT INTO `complaintremark` (`id`, `complaintNumber`, `status`, `remark`, `remarkDate`) VALUES
+(1, 1, 'closed', 'fazoul banda', '2022-05-25 16:07:46');
 
 -- --------------------------------------------------------
 
@@ -80,9 +93,16 @@ CREATE TABLE `state` (
   `id` int(11) NOT NULL,
   `stateName` varchar(255) NOT NULL,
   `stateDescription` tinytext NOT NULL,
-  `postingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `postingDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `updationDate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `state`
+--
+
+INSERT INTO `state` (`id`, `stateName`, `stateDescription`, `postingDate`, `updationDate`) VALUES
+(1, 'Punjab', '', '2022-05-25 16:04:38', '');
 
 -- --------------------------------------------------------
 
@@ -94,9 +114,16 @@ CREATE TABLE `subcategory` (
   `id` int(11) NOT NULL,
   `categoryid` int(11) NOT NULL,
   `subcategory` varchar(255) NOT NULL,
-  `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creationDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `updationDate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subcategory`
+--
+
+INSERT INTO `subcategory` (`id`, `categoryid`, `subcategory`, `creationDate`, `updationDate`) VALUES
+(1, 1, 'pk', '2022-05-25 16:04:30', '');
 
 -- --------------------------------------------------------
 
@@ -114,10 +141,17 @@ CREATE TABLE `tblcomplaints` (
   `noc` varchar(255) NOT NULL,
   `complaintDetails` mediumtext NOT NULL,
   `complaintFile` varchar(255) DEFAULT NULL,
-  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `regDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` varchar(50) DEFAULT NULL,
-  `lastUpdationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblcomplaints`
+--
+
+INSERT INTO `tblcomplaints` (`complaintNumber`, `userId`, `category`, `subcategory`, `complaintType`, `state`, `noc`, `complaintDetails`, `complaintFile`, `regDate`, `status`, `lastUpdationDate`) VALUES
+(1, 2, 1, 'pk', 'General Query', 'Punjab', 'Emergency', 'Punjab', '', '2022-05-25 16:05:18', 'closed', '2022-05-25 16:07:46');
 
 -- --------------------------------------------------------
 
@@ -130,7 +164,7 @@ CREATE TABLE `userlog` (
   `uid` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `userip` binary(16) NOT NULL,
-  `loginTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `loginTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `logout` varchar(255) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -142,7 +176,17 @@ CREATE TABLE `userlog` (
 INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (1, 0, 'john@gmail.com', 0x3a3a3100000000000000000000000000, '2020-05-08 14:14:43', '', 0),
 (2, 1, 'john@gmail.com', 0x3a3a3100000000000000000000000000, '2020-05-08 14:14:50', '08-05-2020 07:44:51 PM', 1),
-(3, 1, 'john@gmail.com', 0x3a3a3100000000000000000000000000, '2020-05-08 14:16:30', '', 1);
+(3, 1, 'john@gmail.com', 0x3a3a3100000000000000000000000000, '2020-05-08 14:16:30', '', 1),
+(4, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-05-25 16:03:56', '', 1),
+(5, 0, 'admin', 0x3a3a3100000000000000000000000000, '2022-07-02 14:18:08', '', 0),
+(6, 0, 'admin', 0x3a3a3100000000000000000000000000, '2022-07-02 14:18:11', '', 0),
+(7, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-02 14:18:14', '', 1),
+(8, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-03 12:56:10', '03-07-2022 06:27:54 PM', 1),
+(9, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-03 12:58:00', '03-07-2022 07:31:22 PM', 1),
+(10, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-03 14:03:55', '03-07-2022 07:47:00 PM', 1),
+(11, 0, 'admin', 0x3a3a3100000000000000000000000000, '2022-07-03 14:34:32', '', 0),
+(12, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-03 14:34:36', '', 1),
+(13, 2, 'admin@a.com', 0x3a3a3100000000000000000000000000, '2022-07-05 04:45:33', '05-07-2022 10:15:40 AM', 1);
 
 -- --------------------------------------------------------
 
@@ -156,13 +200,13 @@ CREATE TABLE `users` (
   `userEmail` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `contactNo` bigint(11) DEFAULT NULL,
-  `address` tinytext,
+  `address` tinytext DEFAULT NULL,
   `State` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   `pincode` int(6) DEFAULT NULL,
   `userImage` varchar(255) DEFAULT NULL,
-  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `regDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -171,7 +215,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullName`, `userEmail`, `password`, `contactNo`, `address`, `State`, `country`, `pincode`, `userImage`, `regDate`, `updationDate`, `status`) VALUES
-(1, 'John Smith', 'john@gmail.com', '202cb962ac59075b964b07152d234b70', 9999999999, NULL, NULL, NULL, NULL, NULL, '2020-05-08 14:10:50', '2020-05-08 14:16:22', 1);
+(1, 'John Smith', 'john@gmail.com', '202cb962ac59075b964b07152d234b70', 9999999999, NULL, NULL, NULL, NULL, NULL, '2020-05-08 14:10:50', '2020-05-08 14:16:22', 1),
+(2, 'Abdullah A', 'admin@a.com', '21232f297a57a5a743894a0e4a801fc3', 20200202, NULL, NULL, NULL, NULL, NULL, '2022-05-25 16:03:44', '0000-00-00 00:00:00', 1);
 
 --
 -- Indexes for dumped tables
@@ -239,43 +284,43 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `complaintremark`
 --
 ALTER TABLE `complaintremark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `state`
 --
 ALTER TABLE `state`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `subcategory`
 --
 ALTER TABLE `subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblcomplaints`
 --
 ALTER TABLE `tblcomplaints`
-  MODIFY `complaintNumber` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `complaintNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

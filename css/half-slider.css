@@ -1,8 +1,8 @@
-/*
- * Start Bootstrap - Half Slider (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
+ /* * Start Bootstrap - Half Slider (http://startbootstrap.com/)
+ Copyright 2013-2016 Start Bootstrap
+ Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE) */
+
 
 html,
 body {
@@ -10,7 +10,13 @@ body {
 }
 
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
-
+ body{
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+} 
 .carousel {
     height: 50%;
 }
@@ -35,4 +41,51 @@ body {
 
 footer {
     margin: 50px 0;
+} 
+/* Change Brand Font */
+.navbar-brand{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  /* Change Navigation Color */
+  .navbar #myMenu .custom-nav .nav-item a {
+    color: #fff;
+  }
+  .navbar #myMenu .custom-nav .nav-item a:hover{
+    color: #F0AAB1;
+  }
+  
+  /* Make Header Image Responsive */
+  .back-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    border-radius: 0px;
+    margin-top: 74px;
+  }
+  
+  /* Header Image Sub-Title */
+  .st {
+    font-size: 24px;
+  }
+  
+  /* Change Footer Social Icon Color */
+  a {
+    color:  #DC3545;
+  }
+  a:hover {
+    color: #E994A2;
+  }
+.drp1:focus{
+  font-size: large;
 }
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
+}
+  

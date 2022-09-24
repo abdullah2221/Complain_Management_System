@@ -12,105 +12,151 @@
     <title>Complaint Management System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/half-slider.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    </head>
 </head>
 
 <body>
+    <!-- Start Nagigation -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger pl-5 fixed-top">
+        <a href="index.html" class="navbar-brand" style="font-size: 25px;">OCMS</a>
+        <span class="navbar-text">Prayer and Relief</span>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav pl-5 custom-nav">
+                <li class="nav-item"><a href="#home"  class="nav-link " style="font-size: 15px;">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" style="font-size: 15px;">About</a></li>
+                <li class="nav-item"><a href="#policy" class="nav-link" style="font-size: 15px;">Policy</a></li>
+                <!-- <li class="nav-item"><a href="#Team" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="#Contact" class="nav-link">Contact</a></li> -->
+            </ul>
+            <marquee class="display-3 text-white" behavior="" direction=""> Online Complaint Management System
+            </marquee>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">COMPLAINT MANAGEMENT </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="http://localhost/Complaint_Management_System/users/">User Login</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost/Complaint_Management_System/users/registration.php">User Registration</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost/Complaint_Management_System/admin/">admin</a>
-                    </li>
+
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <!-- The right dropdown menu -->
+            <li class="dropdown">
+                <a href="#" style="font-size: 20px" class="drp1 dropdown-toggle text-white" data-toggle="dropdown"
+                    role="button" aria-haspopup="true" aria-expanded="false">User</a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://localhost/cms/admin/">Admin</a></li>
+                    <li><a href="http://localhost/cms/users/registration.php">Register</a></li>
+                    <li><a href="http://localhost/cms/users/">Login</a></li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            </li>
+            <!-- Dropdown ending here-->
+        </ul>
+    </nav> <!-- End Navigation -->
+
+
+    <header id="home" class="jumbotron back-image" style="background-image: url(images/Banner.jpeg); height: 600px;">
+        <div class="text-center" style="margin-top: 170px;">
+            <h1 class="text-uppercase text-danger font-weight-bold">Welcome to OCMS.</h1>
+            <p class="font-italic font-weight-bold st">Prayer and relief</p>
+            <a href="http://localhost/Complaint_Management_System/users/" class="btn btn-outline-danger mr-4">Login</a>
+            <a href="http://localhost/Complaint_Management_System/users/registration.php" target="_blank"
+                class="btn btn-outline-danger">Register</a>
         </div>
-        <!-- /.container -->
-    </nav>
+    </header> <!-- End Header Jumbotron -->
 
-    <!-- Half Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+    <!-- Start Course  -->
+    <div class="container pt-3 pb-3" id="Courses">
+        <!-- Start Course Container -->
+        <h1 class="text-center">Our Aim</h1> <!-- Course Heading -->
+        <div id="about" class="row mt-4 ">
+            <!-- Start Course 1st Row -->
+            <div class="col-lg-6 mb-4">
+                <!-- Start Course 1st Row's 1st Column -->
+                <img src="images/course1.jpeg" alt="" class="img-fluid">
+            </div> <!-- End Course 1st Row's 1st Column -->
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
+            <!-- animate__slideOutDown -->
+            <div class="col-lg-6">
+                <!-- Start Course 1st Row's 2nd Column -->
+                <h2 class="text-center animate__animated animate__bounce">Introduction</h2> <br>
+                <p class="animate__animated animate__zoomInUp animate__delay-2s" style="font-size: 20px;">Online
+                    Complaints management is about resolving individual complaints and identifying opportunities to make
+                    systemic improvements. Every organization that deals with the public will receive complaints. The
+                    community expects government organizations to be customer-focused and responsive to complaints.</p>
+                <p style="font-size: 20px;" class="animate__animated animate__zoomInUp animate__delay-2s">An effective
+                    CMS is integral to providing quality customer service. It helps to measure customer satisfaction and
+                    is a useful source of information and feedback for improving services. Often customers are the first
+                    to identify when things are not working properly.</p>
+            </div> <!-- End Course 1st Row's 2nd Column -->
+        </div> <!-- End Course 1st Row -->
 
-            <div class="item active">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://localhost/cms/img/c2.jpg');"></div>
-                <div class="carousel-caption">
+        <div id="policy" class="row mt-4">
+            <!-- Start Course 2nd Row -->
+            <div class="col-lg-6">
+                <!-- Start Course 2nd Row's 1st Column -->
+                <h2 class="text-center">Policy</h2> <br>
+                <p style="font-size: 20px;" class="animate__animated animate__zoomInUp animate__delay-5s">Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Eum ducimus, modi aut consequatur dolore ut
+                    praesentium esse recusandae at amet. Dolorem eius obcaecati ratione, quas laborum consequatur
+                    inventore vitae nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos asperiores
+                    magnam culpa ullam. Quasi voluptatem eveniet sed velit tempore eaque adipisci magnam recusandae
+                    quaerat praesentium illo, animi, sit ratione quo.</p>
+                <p style="font-size: 20px;" class="animate__animated animate__zoomInUp animate__delay-5s">Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Sapiente nisi atque ipsam optio, iusto
+                    explicabo odit suscipit delectus quis eum adipisci quo voluptas laboriosam quisquam sit, sint
+                    asperiores eius in!</p>
+            </div> <!-- End Course 2nd Row's 1st Column -->
 
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://localhost/cms/img/c10.jpg');"></div>
-                <div class="carousel-caption">
+            <div class="col-lg-6">
+                <!-- Start Course 2nd Row's 2nd Column -->
+                <img src="images/course2.jpeg" alt="" class="img-fluid">
+            </div> <!-- End Course 2nd Row's 2nd Column -->
+        </div> <!-- End Course 2nd Row -->
+    </div> <!-- End Course Container -->
+    <!-- End Course  -->
 
-                </div>
-            </div>
-        </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev">Pakistan</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
 
-    </header>
 
     <!-- Page Content -->
-    <div class="container">
+    <!-- Start Footer-->
+    <footer class="container-fluid bg-dark text-white" style="border-top: 3px solid #DC3545;">
+        <div class="container">
+            <!-- Start Footer Container -->
+            <div class="row py-3">
+                <!-- Start Footer Row -->
+                <div class="col-md-6">
+                    <!-- Start Footer 1st Column -->
+                    <div>
+                        <span style="font-size: 10px" class="display-6">Follow Us: </span>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f px-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter pr-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube pr-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-google-plus-g pr-3"></i></a>
+                        <a href="#" target="_blank"><i class="fas fa-rss pr-3"></i></a>
+                    </div>
+                </div> <!-- End Footer 1st Column -->
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="com"><h1><b>WELCOME TO COMPLAINT BOX PUNAJB GROUP OF COLLOGES</b></h1>
-                <p><h2>The Easiest Way To Complain Online </h2><br> <b><i>You can complain about any Teacher, Student and any other worker.</b> </i></p></div>
+                <div class="col-md-6 text-right">
+                    <!-- Start Footer 2nd Column -->
+                    <small style="font-size: 10px"> Designed by <a href="#" target="_blank">...</a> &copy; 2022.
+                    </small>
+                </div> <!-- End Footer 2nd Column -->
+            </div> <!-- End Footer Row -->
+        </div> <!-- End Footer Container -->
+    </footer> <!-- End Footer -->
 
-            </div>
-        </div>
-<style>.com{text-align: center;} </style>
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2020 CMS</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-        <style> .col-lg-12{text-align: center; border: 1px solid black;}</style>
-
-    </div>
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -121,11 +167,94 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
     </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <li>
+    <a href="http://localhost/Complaint_Management_System/users/">User Login</a>
+</li>
+<li>
+    <a href="http://localhost/Complaint_Management_System/users/registration.php">User
+        Registration</a>
+</li>
+<li>
+    <a href="http://localhost/Complaint_Management_System/admin/">admin</a>
+</li> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Half Page Image Background Carousel Header -->
+<!-- <header id="myCarousel" class="carousel slide"> -->
+<!-- Indicators -->
+<!-- <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol> -->
+
+<!-- Wrapper for Slides -->
+<!-- <div class="carousel-inner">
+
+        <div class="item active"> -->
+<!-- Set the second background image using inline CSS below. -->
+<!-- <div class="fill" style="background-image:url('http://localhost/cms/img/c2.jpg');"></div>
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item"> -->
+<!-- Set the third background image using inline CSS below. -->
+<!-- <div class="fill" style="background-image:url('http://localhost/cms/img/c10.jpg');"></div>
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+    </div> -->
+
+<!-- Controls -->
+<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev">Pakistan</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header> -->
